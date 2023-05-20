@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+<!--        <variable-->
+<!--            name="data"-->
+<!--            type="sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto" />-->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="240dp"
-        android:layout_height="280dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
             android:layout_width="0dp"
