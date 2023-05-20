@@ -22,5 +22,6 @@
     <string name="tv_vote_bad_comment">별로에요 ㅠ</string>
     <string name="btn_vote_to_home">홈으로</string>
     <string name="btn_vote_to_ranking">랭킹 보기</string>
+    <string name="tv_ranking_title">모기 퇴치법</string>
 
 </resources>
