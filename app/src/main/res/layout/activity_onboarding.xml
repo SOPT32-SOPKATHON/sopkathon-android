@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,6 +11,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.onboarding.OnboardingActivity">
+
+
+        <TextView
+            android:id="@+id/tv_onboarding_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_onboarding_sub_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="60dp"/>
+
+        <TextView
+            android:id="@+id/tv_onboarding_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_onboarding_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_sub_title" />
+
+
+        <TextView
+            android:id="@+id/tv_onboarding_start_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="132dp"
+            android:background="@drawable/rectangle_onboarding_radius_34"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="모기를 잡으면 시작됩니다"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_title" />
+
+        <ImageView
+            android:id="@+id/iv_onboarding_mosquitto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_mosquitto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
