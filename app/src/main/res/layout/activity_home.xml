@@ -23,7 +23,7 @@
                     android:id="@+id/cl_home_forecast_box"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:background="#4DAFCE"
+                    android:background="@drawable/img_main_forecast"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
