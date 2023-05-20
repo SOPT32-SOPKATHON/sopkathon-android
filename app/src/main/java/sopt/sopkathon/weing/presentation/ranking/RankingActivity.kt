@@ -8,6 +8,7 @@ import sopt.sopkathon.weing.data.remote.ServicePool
 import sopt.sopkathon.weing.data.repository.RankingRepositoryImpl
 import sopt.sopkathon.weing.databinding.ActivityRankingBinding
 import sopt.sopkathon.weing.presentation.base.BindingActivity
+import sopt.sopkathon.weing.presentation.home.HomeActivity
 import sopt.sopkathon.weing.presentation.ranking.adapter.RankingAdapter
 
 class RankingActivity : BindingActivity<ActivityRankingBinding>(R.layout.activity_ranking) {
@@ -21,8 +22,17 @@ class RankingActivity : BindingActivity<ActivityRankingBinding>(R.layout.activit
         rankingViewModel.getTopRanking()
         rankingViewModel.getOutOfRanking()
 
-        observeRanking()
+        observeOutOfRank()
         initAdapter()
+        setClickEventOnHomeButton()
+    }
+
+    private fun setClickEventOnHomeButton() {
+        binding.btnRankingHome.setOnClickListener {
+            val intent = HomeActivity.getIntent(this)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun initViewModel() {
@@ -42,7 +52,7 @@ class RankingActivity : BindingActivity<ActivityRankingBinding>(R.layout.activit
         binding.rvRankingRank.adapter = rankingAdapter
     }
 
-    private fun observeRanking() {
+    private fun observeOutOfRank() {
         rankingViewModel.outOfRank.observe(this) {
             rankingAdapter.initData(it)
         }
