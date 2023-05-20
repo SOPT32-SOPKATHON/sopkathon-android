@@ -17,22 +17,31 @@
             layout="@layout/toolbar_skill" />
 
         <TextView
+            style="@style/SB28"
             android:id="@+id/tv_kill_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"
             android:layout_marginTop="14dp"
             android:text="@string/tv_kill_title"
-            android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
+        <ImageView
+            android:id="@+id/iv_kill_siren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_kill_siren"
+            app:layout_constraintBottom_toBottomOf="@id/tv_kill_main"
+            app:layout_constraintStart_toEndOf="@id/tv_kill_main"
+            app:layout_constraintTop_toTopOf="@id/tv_kill_main" />
+
         <TextView
             android:id="@+id/tv_kill_sub"
+            style="@style/R12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_kill_sub"
-            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@id/tv_kill_main"
             app:layout_constraintTop_toBottomOf="@id/tv_kill_main" />
 
@@ -44,7 +53,6 @@
             android:layout_marginTop="14dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="45dp"
-            android:background="@color/black"
             android:elevation="9dp"
             app:cardCornerRadius="11dp"
             app:layout_constraintBottom_toTopOf="@id/btn_kill_reload"
@@ -52,13 +60,15 @@
 
         <TextView
             android:id="@+id/btn_kill_reload"
+            style="@style/SB16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="34dp"
             android:layout_marginBottom="12dp"
             android:background="@drawable/rectangle_kill_border_1dp"
             android:gravity="center"
-            android:paddingVertical="20dp"
+            android:paddingTop="19dp"
+            android:paddingBottom="18dp"
             android:text="@string/btn_kill_reload"
             android:textColor="#70D2ED"
             app:layout_constraintBottom_toTopOf="@id/btn_kill_success"
@@ -67,12 +77,14 @@
 
         <TextView
             android:id="@+id/btn_kill_success"
+            style="@style/SB16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             android:background="@drawable/rectangle_kill_color"
             android:gravity="center"
-            android:paddingVertical="20dp"
+            android:paddingTop="19dp"
+            android:paddingBottom="18dp"
             android:text="@string/btn_kill_success"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
