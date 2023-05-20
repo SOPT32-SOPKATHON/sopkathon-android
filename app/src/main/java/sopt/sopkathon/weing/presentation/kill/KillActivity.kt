@@ -23,10 +23,25 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
         binding.btnKillReload.setOnClickListener {
             loadImage()
         }
+
+        clickKillSuccessButton()
     }
 
     private fun loadImage() {
 
+    }
+
+    //해결했어요 버튼 클릭시
+    private fun clickKillSuccessButton(){
+        binding.btnKillSuccess.setOnClickListener{
+
+            val dialog = VoteDialog()
+            dialog.isCancelable = false
+            dialog.show(this.supportFragmentManager, "VoteDialog")
+
+
+
+        }
     }
 
 }
