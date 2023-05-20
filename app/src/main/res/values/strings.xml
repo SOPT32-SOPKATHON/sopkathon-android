@@ -11,6 +11,10 @@
     <string name="temp4">temp</string>
     <!-- 평가 뷰 -->
     <string name="temp5">temp</string>
+    <string name="tv_ranking_second">2</string>
+    <string name="tv_ranking_first">1</string>
+    <string name="tv_ranking_third">3</string>
+    <string name="btn_ranking_home">홈으로 가기</string>
     <string name="tv_vote_title">방금 모기 퇴치 방법은 어떠셨나요?</string>
     <string name="tv_vote_good_comment">너무 잘 잡혔어요!</string>
     <string name="tv_vote_bad_comment">별로에요 ㅠ</string>
