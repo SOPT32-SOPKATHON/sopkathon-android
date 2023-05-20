@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto
+import sopt.sopkathon.weing.data.remote.entity.response.ResponsePreventionDto
 import sopt.sopkathon.weing.databinding.ItemHomeTipBinding
 
-class HomeTipAdapter() :
+class HomeTipAdapter :
     ListAdapter<ResponsePreventionDto, HomeTipAdapter.HomeTipViewHolder>(HomeTipDiffCallBack()) {
     class HomeTipViewHolder(private val binding: ItemHomeTipBinding) :
         RecyclerView.ViewHolder(binding.root) {

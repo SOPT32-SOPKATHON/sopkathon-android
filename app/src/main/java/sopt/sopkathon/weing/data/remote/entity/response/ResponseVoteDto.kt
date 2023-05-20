@@ -1,14 +1,13 @@
-package sopt.sopkathon.weing.data.remote.entity
+package sopt.sopkathon.weing.data.remote.entity.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-
 @Serializable
 data class ResponseVoteDto(
     @SerialName("code")
-    val code:Int,
-    val message:String,
+    val code: Int,
+    val message: String,
     val data: VoteData,
 ) {
     @Serializable
@@ -29,4 +28,3 @@ data class ResponseVoteDto(
         val dislike_count: Int,
     )
 }
-

@@ -1,4 +1,4 @@
-package sopt.sopkathon.weing.data.remote.api
+package sopt.sopkathon.weing.data.remote.entity.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

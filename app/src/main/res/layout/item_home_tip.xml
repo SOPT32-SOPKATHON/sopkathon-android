@@ -6,7 +6,7 @@
     <data>
         <!--        <variable-->
         <!--            name="data"-->
-        <!--            type="sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto" />-->
+        <!--            type="sopt.sopkathon.weing.data.remote.entity.response.ResponsePreventionDto" />-->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

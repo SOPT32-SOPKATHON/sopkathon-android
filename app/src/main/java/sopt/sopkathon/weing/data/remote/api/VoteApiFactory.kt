@@ -4,10 +4,7 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
-import sopt.sopkathon.weing.data.remote.ApiFactory
-import sopt.sopkathon.weing.data.remote.entity.RequestVoteService
-import sopt.sopkathon.weing.data.remote.entity.ResponsePreventionService
-import sopt.sopkathon.weing.data.remote.entity.ResponseScoreService
+import sopt.sopkathon.weing.data.remote.entity.request.RequestVoteService
 import sopt.sopkathon.weing.presentation.kill.KillService
 
 object VoteApiFactory {

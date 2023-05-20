@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +13,12 @@ import retrofit2.Call
 import retrofit2.Response
 import sopt.sopkathon.weing.R
 import sopt.sopkathon.weing.data.remote.api.ServicePool
-import sopt.sopkathon.weing.data.remote.entity.RequestVoteDto
-import sopt.sopkathon.weing.data.remote.entity.ResponseVoteDto
+import sopt.sopkathon.weing.data.remote.entity.request.RequestVoteDto
+import sopt.sopkathon.weing.data.remote.entity.response.ResponseVoteDto
 import sopt.sopkathon.weing.databinding.DialogVoteBinding
 import sopt.sopkathon.weing.presentation.home.HomeActivity
 import sopt.sopkathon.weing.presentation.ranking.RankingActivity
 import sopt.sopkathon.weing.util.shortToastByString
-
 
 class VoteDialog : DialogFragment() {
 
@@ -30,11 +28,10 @@ class VoteDialog : DialogFragment() {
     private var badIconStatus: Boolean = false
     private val voteService = ServicePool.voteService
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = DialogVoteBinding.inflate(inflater, container, false)
         return binding.root
@@ -63,7 +60,6 @@ class VoteDialog : DialogFragment() {
     private fun clickGoodIcon() {
         if (!badIconStatus) {
             binding.ivVoteGood.setOnClickListener {
-
                 if (goodIconStatus) {
                     goodIconStatus = !goodIconStatus
                     binding.ivVoteGood.setImageResource(R.drawable.img_good)
@@ -72,11 +68,10 @@ class VoteDialog : DialogFragment() {
                     binding.btnVoteToHome.background =
                         getDrawable(
                             requireContext(),
-                            R.drawable.rectangle_vote_radius_11_none_fill
+                            R.drawable.rectangle_vote_radius_11_none_fill,
                         )
                     binding.btnVoteToRanking.background =
                         getDrawable(requireContext(), R.drawable.rectangle_vote_radius_11_fill)
-
                 } else {
                     goodIconStatus = !goodIconStatus
                     binding.ivVoteGood.setImageResource(R.drawable.img_good_click)
@@ -85,30 +80,21 @@ class VoteDialog : DialogFragment() {
                     binding.btnVoteToHome.background =
                         getDrawable(
                             requireContext(),
-                            R.drawable.rectangle_vote_radius_11_none_fill_click
+                            R.drawable.rectangle_vote_radius_11_none_fill_click,
                         )
                     binding.btnVoteToRanking.background =
                         getDrawable(
                             requireContext(),
-                            R.drawable.rectangle_vote_radius_11_fill_click
+                            R.drawable.rectangle_vote_radius_11_fill_click,
                         )
-
-
                 }
-
-
             }
-
         }
-
-
     }
 
     private fun clickBadIcon() {
-
         if (!goodIconStatus) {
             binding.ivVoteBad.setOnClickListener {
-
                 if (badIconStatus) {
                     badIconStatus = !badIconStatus
                     binding.ivVoteBad.setImageResource(R.drawable.img_bad)
@@ -117,12 +103,10 @@ class VoteDialog : DialogFragment() {
                     binding.btnVoteToHome.background =
                         getDrawable(
                             requireContext(),
-                            R.drawable.rectangle_vote_radius_11_none_fill
+                            R.drawable.rectangle_vote_radius_11_none_fill,
                         )
                     binding.btnVoteToRanking.background =
                         getDrawable(requireContext(), R.drawable.rectangle_vote_radius_11_fill)
-
-
                 } else {
                     badIconStatus = !badIconStatus
                     binding.ivVoteBad.setImageResource(R.drawable.img_bad_click)
@@ -131,23 +115,17 @@ class VoteDialog : DialogFragment() {
                     binding.btnVoteToHome.background =
                         getDrawable(
                             requireContext(),
-                            R.drawable.rectangle_vote_radius_11_none_fill_click
+                            R.drawable.rectangle_vote_radius_11_none_fill_click,
                         )
                     binding.btnVoteToRanking.background =
                         getDrawable(
                             requireContext(),
-                            R.drawable.rectangle_vote_radius_11_fill_click
+                            R.drawable.rectangle_vote_radius_11_fill_click,
                         )
-
                 }
-
             }
-
         }
-
-
     }
-
 
     private fun clickToHomeButton() {
         binding.btnVoteToHome.setOnClickListener {
@@ -159,11 +137,8 @@ class VoteDialog : DialogFragment() {
             }
             val intent = Intent(requireContext(), HomeActivity::class.java)
             startActivity(intent)
-
         }
-
     }
-
 
     private fun clickToRankinButton() {
         binding.btnVoteToRanking.setOnClickListener {
@@ -175,9 +150,7 @@ class VoteDialog : DialogFragment() {
             }
             val intent = Intent(requireContext(), RankingActivity::class.java)
             startActivity(intent)
-
         }
-
     }
 
     private fun setButtonStatus() {
@@ -185,25 +158,22 @@ class VoteDialog : DialogFragment() {
         binding.btnVoteToRanking.isEnabled = false
     }
 
-
     private fun requestData(status: String) {
-
         val args = Bundle()
 
         voteService.vote(
 
             args.getInt("killId"),
             RequestVoteDto(
-                status
-            )
+                status,
+            ),
         ).enqueue(object : retrofit2.Callback<ResponseVoteDto> {
             override fun onResponse(
                 call: Call<ResponseVoteDto>,
                 response: Response<ResponseVoteDto>,
             ) {
                 if (response.isSuccessful) {
-                    response.body()?.message?.let { requireContext().shortToastByString(it)}
-
+                    response.body()?.message?.let { requireContext().shortToastByString(it) }
                 } else {
                     response.body()?.message?.let { requireContext().shortToastByString(it) }
                         ?: "서버통신 실패(40X)"
@@ -211,15 +181,8 @@ class VoteDialog : DialogFragment() {
             }
 
             override fun onFailure(call: Call<ResponseVoteDto>, t: Throwable) {
-
                 t.message?.let { requireContext().shortToastByString(it) } ?: "서버통신 실패(응답값 X)"
             }
         })
-
-
     }
-
-
 }
-
-

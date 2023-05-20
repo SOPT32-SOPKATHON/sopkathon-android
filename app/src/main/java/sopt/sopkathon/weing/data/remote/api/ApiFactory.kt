@@ -1,4 +1,4 @@
-package sopt.sopkathon.weing.data.remote
+package sopt.sopkathon.weing.data.remote.api
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
@@ -6,6 +6,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import sopt.sopkathon.weing.BuildConfig
 
 object ApiFactory {
     private val client by lazy {
@@ -19,7 +20,7 @@ object ApiFactory {
 
     val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("http://3.34.48.202:8080/")
+            .baseUrl(BuildConfig.WEING_BASE_URL)
             .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
             .client(client)
             .build()
