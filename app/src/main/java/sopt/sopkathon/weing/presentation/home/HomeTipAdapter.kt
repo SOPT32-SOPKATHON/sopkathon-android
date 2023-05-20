@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto
 import sopt.sopkathon.weing.databinding.ItemHomeTipBinding
 
@@ -13,7 +14,9 @@ class HomeTipAdapter() :
     class HomeTipViewHolder(private val binding: ItemHomeTipBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(tipData: ResponsePreventionDto) {
-//            binding.data = tipData
+            Glide.with(binding.root)
+                .load(tipData.image)
+                .into(binding.ivHomeItemImage)
             binding.tvHomeItemTitle.text = tipData.title
             binding.tVHomeItemBody.text = tipData.content
         }
