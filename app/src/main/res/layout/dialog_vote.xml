@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rectangle_vote_radius_8">
+
+
+    <TextView
+        android:id="@+id/tv_vote_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/tv_vote_title"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/iv_vote_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/img_good"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vote_title" />
+
+    <ImageView
+        android:id="@+id/iv_vote_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="56dp"
+        android:src="@drawable/img_bad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vote_title" />
+
+
+    <TextView
+        android:id="@+id/tv_vote_good"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_vote_good_comment"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_vote_good"
+        app:layout_constraintStart_toStartOf="@id/iv_vote_good"
+        app:layout_constraintTop_toBottomOf="@id/iv_vote_good" />
+
+    <TextView
+        android:id="@+id/tv_vote_bad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/tv_vote_bad_comment"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_vote_bad"
+        app:layout_constraintStart_toStartOf="@id/iv_vote_bad"
+        app:layout_constraintTop_toBottomOf="@id/iv_vote_bad" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_vote_to_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="43dp"
+        android:background="@drawable/rectangle_vote_radius_11_none_fill"
+        android:text="@string/btn_vote_to_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vote_good" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_vote_to_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="22dp"
+        android:background="@drawable/rectangle_vote_radius_11_fill"
+        android:text="@string/btn_vote_to_ranking"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_vote_to_home" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
