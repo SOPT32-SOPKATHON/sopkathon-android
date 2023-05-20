@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import sopt.sopkathon.weing.R
-import sopt.sopkathon.weing.data.remote.ServicePool
+import sopt.sopkathon.weing.data.remote.api.ServicePool
 import sopt.sopkathon.weing.databinding.ActivityHomeBinding
 import sopt.sopkathon.weing.presentation.base.BindingActivity
 import sopt.sopkathon.weing.presentation.kill.KillActivity

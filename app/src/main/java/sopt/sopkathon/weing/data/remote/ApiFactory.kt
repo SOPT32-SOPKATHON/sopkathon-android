@@ -6,9 +6,6 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import sopt.sopkathon.weing.data.remote.api.RankingService
-import sopt.sopkathon.weing.data.remote.entity.ResponsePreventionService
-import sopt.sopkathon.weing.data.remote.entity.ResponseScoreService
 
 object ApiFactory {
     private val client by lazy {
@@ -29,10 +26,4 @@ object ApiFactory {
     }
 
     inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
-}
-
-object ServicePool {
-    val PreventionService = ApiFactory.create<ResponsePreventionService>()
-    val ScoreService = ApiFactory.create<ResponseScoreService>()
-    val rankingService = ApiFactory.create<RankingService>()
 }
