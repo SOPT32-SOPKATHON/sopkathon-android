@@ -3,6 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="displeasure_D9003C">#D9003C</color>
+    <color name="warning_FF5C00">#FF5C00</color>
+    <color name="interest_FF5C00">#FF5C00</color>
+    <color name="pleasant_4F9D00">#4F9D00</color>
     <color name="Primary40_70D2ED">#70D2ED</color>
     <color name="Primary30_95DFF3">#95DFF3</color>
     <color name="Primary20_BEECF8">#BEECF8</color>
@@ -11,6 +15,4 @@
     <color name="Black50_909399">#909399</color>
     <color name="Black30_BDBEC1">#BDBEC1</color>
     <color name="White_FFFFFF">#FFFFFF</color>
-
-
 </resources>
