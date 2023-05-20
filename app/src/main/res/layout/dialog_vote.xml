@@ -70,7 +70,6 @@
         android:text="@string/btn_vote_to_home"
         android:layout_marginBottom="12dp"
         android:background="@drawable/rectangle_vote_radius_11_none_fill"
-        android:text="@string/btn_vote_to_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btn_vote_to_ranking"
