@@ -17,11 +17,12 @@
             android:id="@+id/tv_onboarding_sub_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:text="@string/tv_onboarding_sub_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="60dp"/>
+            android:textSize="18dp"/>
 
         <TextView
             android:id="@+id/tv_onboarding_title"
@@ -31,7 +32,8 @@
             android:text="@string/tv_onboarding_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_sub_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_sub_title"
+            android:textSize="48dp"/>
 
 
         <TextView
@@ -52,6 +54,7 @@
             android:id="@+id/iv_onboarding_mosquitto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="93dp"
             android:src="@drawable/img_mosquitto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
