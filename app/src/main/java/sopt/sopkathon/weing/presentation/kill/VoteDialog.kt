@@ -19,7 +19,7 @@ import sopt.sopkathon.weing.data.remote.entity.ResponseVoteDto
 import sopt.sopkathon.weing.databinding.DialogVoteBinding
 import sopt.sopkathon.weing.presentation.home.HomeActivity
 import sopt.sopkathon.weing.presentation.ranking.RankingActivity
-import sopt.sopkathon.weing.util.shortToastByInt
+import sopt.sopkathon.weing.util.shortToastByString
 
 
 class VoteDialog : DialogFragment() {
@@ -93,7 +93,6 @@ class VoteDialog : DialogFragment() {
                             R.drawable.rectangle_vote_radius_11_fill_click
                         )
 
-                    requestData("like")
 
                 }
 
@@ -107,7 +106,7 @@ class VoteDialog : DialogFragment() {
 
     private fun clickBadIcon() {
 
-        if (goodIconStatus) {
+        if (!goodIconStatus) {
             binding.ivVoteBad.setOnClickListener {
 
                 if (badIconStatus) {
@@ -140,7 +139,6 @@ class VoteDialog : DialogFragment() {
                             R.drawable.rectangle_vote_radius_11_fill_click
                         )
 
-                    requestData("dislike")
                 }
 
             }
@@ -154,6 +152,11 @@ class VoteDialog : DialogFragment() {
     private fun clickToHomeButton() {
         binding.btnVoteToHome.setOnClickListener {
             dismiss()
+            if (badIconStatus) {
+                requestData("dislike")
+            } else if (goodIconStatus) {
+                requestData("like")
+            }
             val intent = Intent(requireContext(), HomeActivity::class.java)
             startActivity(intent)
 
@@ -165,6 +168,11 @@ class VoteDialog : DialogFragment() {
     private fun clickToRankinButton() {
         binding.btnVoteToRanking.setOnClickListener {
             dismiss()
+            if (badIconStatus) {
+                requestData("dislike")
+            } else if (goodIconStatus) {
+                requestData("like")
+            }
             val intent = Intent(requireContext(), RankingActivity::class.java)
             startActivity(intent)
 
@@ -180,9 +188,11 @@ class VoteDialog : DialogFragment() {
 
     private fun requestData(status: String) {
 
+        val args = Bundle()
+
         voteService.vote(
 
-            1,
+            args.getInt("killId"),
             RequestVoteDto(
                 status
             )
@@ -192,22 +202,24 @@ class VoteDialog : DialogFragment() {
                 response: Response<ResponseVoteDto>,
             ) {
                 if (response.isSuccessful) {
-                    response.body()?.message?.let { Log.d("asdf", "$it") }
+                    response.body()?.message?.let { requireContext().shortToastByString(it)}
 
                 } else {
-                    response.body()?.message?.let { requireContext().shortToastByInt(it) }
+                    response.body()?.message?.let { requireContext().shortToastByString(it) }
                         ?: "서버통신 실패(40X)"
                 }
             }
 
             override fun onFailure(call: Call<ResponseVoteDto>, t: Throwable) {
 
-                t.message?.let { requireContext().shortToastByInt(it) } ?: "서버통신 실패(응답값 X)"
+                t.message?.let { requireContext().shortToastByString(it) } ?: "서버통신 실패(응답값 X)"
             }
         })
 
 
     }
+
+
 }
 
 
