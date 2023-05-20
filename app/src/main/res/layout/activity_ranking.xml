@@ -31,7 +31,7 @@
                 android:layout_marginTop="36dp"
                 android:text="@string/tv_ranking_title"
                 android:textAppearance="@style/SB28"
-                android:textColor="@color/White_000000"
+                android:textColor="@color/White_FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
