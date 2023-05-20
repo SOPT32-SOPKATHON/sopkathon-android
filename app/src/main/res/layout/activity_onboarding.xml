@@ -51,6 +51,14 @@
             app:layout_constraintTop_toBottomOf="@id/iv_onboarding_title" />
 
         <ImageView
+            android:id="@+id/iv_onboarding_gif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent "
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
             android:id="@+id/iv_onboarding_circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,7 +66,8 @@
             android:src="@drawable/img_circle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent "
-            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment" />
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment"
+            android:visibility="gone"/>
 
 
         <ImageView
@@ -69,7 +78,9 @@
             android:src="@drawable/img_mosquitto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment" />
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment"
+            android:visibility="gone"/>
+        
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
