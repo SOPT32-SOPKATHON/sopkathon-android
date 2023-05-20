@@ -13,7 +13,7 @@ import sopt.sopkathon.weing.presentation.base.BindingActivity
 import sopt.sopkathon.weing.presentation.home.HomeActivity
 
 class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill) {
-    private val killService = ServicePool.getKillService
+    private val killService = ServicePool.killService
     var imageItem: String? = ""
     private var killId: Int = -1
 
@@ -32,6 +32,10 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
         binding.btnKillReload.setOnClickListener {
             loadImage()
         }
+
+
+        clickKillSuccessButton()
+
         // Dialog 띄우기
         binding.btnKillSuccess.setOnClickListener {
             val dialog = VoteDialog()
@@ -40,6 +44,7 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
             dialog.arguments = args
             dialog.show(supportFragmentManager, "")
         }
+
     }
 
     private fun loadImage() {
@@ -60,9 +65,24 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
         })
     }
 
+
+    //해결했어요 버튼 클릭시
+    private fun clickKillSuccessButton() {
+        binding.btnKillSuccess.setOnClickListener {
+
+            val dialog = VoteDialog()
+            dialog.isCancelable = false
+            dialog.show(this.supportFragmentManager, "VoteDialog")
+
+
+        }
+    }
+
+
     private fun setImage(item: String?) {
         Glide.with(binding.root)
             .load(item)
             .into(binding.ivKillMethod)
     }
+
 }

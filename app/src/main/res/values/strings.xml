@@ -2,7 +2,8 @@
     <string name="app_name">Weing</string>
 
     <!-- 온보딩 뷰 -->
-    <string name="temp1">temp</string>
+    <string name="tv_onboarding_sub_title">모기는 물러가라</string>
+    <string name="tv_onboarding_title">위잉위잉</string>
     <!-- 홈 뷰 -->
     <string name="temp2">temp</string>
     <!-- 랭킹 뷰 -->

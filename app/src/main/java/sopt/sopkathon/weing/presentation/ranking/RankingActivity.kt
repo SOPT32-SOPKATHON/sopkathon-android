@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import sopt.sopkathon.weing.R
 import sopt.sopkathon.weing.data.datasource.RankingDataSourceImpl
-import sopt.sopkathon.weing.data.remote.ServicePool
+import sopt.sopkathon.weing.data.remote.api.ServicePool
 import sopt.sopkathon.weing.data.repository.RankingRepositoryImpl
 import sopt.sopkathon.weing.databinding.ActivityRankingBinding
 import sopt.sopkathon.weing.presentation.base.BindingActivity
