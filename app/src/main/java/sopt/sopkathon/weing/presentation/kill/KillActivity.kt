@@ -13,7 +13,7 @@ import sopt.sopkathon.weing.presentation.base.BindingActivity
 import sopt.sopkathon.weing.presentation.home.HomeActivity
 
 class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill) {
-    private val killService = ServicePool.getKillService
+    private val killService = ServicePool.killService
     var imageItem: String? = ""
     private var killId: Int = -1
 
