@@ -2,8 +2,4 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="displeasure_D9003C">#D9003C</color>
-    <color name="warning_FF5C00">#FF5C00</color>
-    <color name="interest_FF5C00">#FF5C00</color>
-    <color name="pleasant_4F9D00">#4F9D00</color>
 </resources>
