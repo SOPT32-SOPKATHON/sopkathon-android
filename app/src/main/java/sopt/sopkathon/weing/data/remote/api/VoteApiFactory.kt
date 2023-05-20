@@ -6,6 +6,7 @@ import retrofit2.Retrofit
 import okhttp3.MediaType.Companion.toMediaType
 import sopt.sopkathon.weing.BuildConfig
 import sopt.sopkathon.weing.data.remote.entity.RequestVoteService
+import sopt.sopkathon.weing.presentation.kill.KillService
 
 
 object VoteApiFactory {
@@ -25,5 +26,6 @@ object VoteApiFactory {
 object ServicePool {
 
    val voteService = VoteApiFactory.voteCreate<RequestVoteService>()
+    val getKillService = VoteApiFactory.voteCreate<KillService>()
 
 }

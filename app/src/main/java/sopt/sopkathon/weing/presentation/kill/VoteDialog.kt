@@ -52,7 +52,7 @@ class VoteDialog : DialogFragment() {
     override fun onResume() {
         super.onResume()
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog?.window?.setLayout(900, 1200)
+        dialog?.window?.setLayout(900, 1000)
     }
 
     override fun onDestroyView() {
@@ -107,7 +107,7 @@ class VoteDialog : DialogFragment() {
 
     private fun clickBadIcon() {
 
-        if (!goodIconStatus) {
+        if (goodIconStatus) {
             binding.ivVoteBad.setOnClickListener {
 
                 if (badIconStatus) {
