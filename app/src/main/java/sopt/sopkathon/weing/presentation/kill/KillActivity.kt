@@ -16,6 +16,9 @@ import sopt.sopkathon.weing.presentation.home.HomeActivity
 class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill) {
     private val killService = ServicePool.getKillService
     var imageItem: String? = ""
+    private var killId : Int = -1
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -25,6 +28,7 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
         //toolbar 백버튼
         binding.toolbar.btnBack.setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
         //이미지 재로딩
         binding.btnKillReload.setOnClickListener {
@@ -33,6 +37,9 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
         //Dialog 띄우기
         binding.btnKillSuccess.setOnClickListener {
             val dialog = VoteDialog()
+            val args = Bundle()
+            args.putInt("killId", killId)
+            dialog.arguments = args
             dialog.show(supportFragmentManager, "")
         }
     }
@@ -43,6 +50,8 @@ class KillActivity : BindingActivity<ActivityKillBinding>(R.layout.activity_kill
                 response: Response<ResponseKillDto>
             ) {
                 imageItem = response.body()?.data?.image
+                killId = response.body()?.data?.id?:-1
+
                 setImage(imageItem)
             }
 
