@@ -138,7 +138,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="4dp"
-                        android:src="@drawable/ic_home_residential"
+                        android:src="@drawable/ic_home_park"
                         app:layout_constraintBottom_toBottomOf="@id/tv_home_park_title"
                         app:layout_constraintEnd_toStartOf="@id/tv_home_park_title"
                         app:layout_constraintTop_toTopOf="@id/tv_home_park_title" />
@@ -218,7 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="4dp"
-                        android:src="@drawable/ic_home_residential"
+                        android:src="@drawable/ic_home_water"
                         app:layout_constraintBottom_toBottomOf="@id/tv_home_water_title"
                         app:layout_constraintEnd_toStartOf="@id/tv_home_water_title"
                         app:layout_constraintTop_toTopOf="@id/tv_home_water_title" />
