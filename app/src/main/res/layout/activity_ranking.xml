@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="sopt.sopkathon.weing.presentation.ranking.RankingViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,19 +68,21 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_first"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/thumb_up" />
+                    tools:srcCompat="@drawable/thumb_up" />
 
                 <TextView
                     android:id="@+id/tv_ranking_first_good_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
+                    android:text="@{String.valueOf(viewModel.topRank[0].likeCount)}"
                     android:textSize="6dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/iv_ranking_first_good"
@@ -87,6 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
+                    android:text="@{String.valueOf(viewModel.topRank[0].dislikeCount)}"
                     android:textSize="6dp"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_first_bad"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -119,10 +126,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="TextView"
+                    android:text="@{viewModel.topRank[0].title}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_first" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_first"
+                    tools:text="스프레이" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -140,6 +148,7 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_second"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -153,6 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
+                    android:text="@{String.valueOf(viewModel.topRank[1].likeCount)}"
                     android:textSize="6dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/iv_ranking_second_good"
@@ -163,10 +173,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="TextView"
+                    android:text="@{viewModel.topRank[1].title}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_second" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_second"
+                    tools:text="전기" />
 
                 <ImageView
                     android:id="@+id/iv_ranking_second_good"
@@ -194,6 +205,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
+                    android:text="@{String.valueOf(viewModel.topRank[1].dislikeCount)}"
                     android:textSize="6dp"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_second_bad"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -215,6 +227,7 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_third"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -228,6 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
+                    android:text="@{String.valueOf(viewModel.topRank[2].dislikeCount)}"
                     android:textSize="6dp"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_third_bad"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -239,6 +253,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
+                    android:text="@{String.valueOf(viewModel.topRank[2].likeCount)}"
                     android:textSize="6dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/iv_ranking_third_good"
@@ -270,10 +285,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="TextView"
+                    android:text="@{viewModel.topRank[2].title}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_third" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_third"
+                    tools:text="물" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -323,14 +339,14 @@
             android:id="@+id/rv_ranking_rank"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_ranking"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_ranking_rank" />
+            app:layout_constraintTop_toBottomOf="@id/cl_ranking_rank"
+            tools:listitem="@layout/item_ranking" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
