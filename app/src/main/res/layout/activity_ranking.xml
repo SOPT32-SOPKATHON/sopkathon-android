@@ -20,7 +20,7 @@
             android:id="@+id/cl_ranking_rank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rectangle_ranking_border_bottom_24dp"
+            android:background="@drawable/ranking_top_layout"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -40,7 +40,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@string/tv_ranking_description"
+                android:textAppearance="@style/R12"
+                android:textColor="@color/White_FFFFFF"
                 app:layout_constraintStart_toStartOf="@+id/tv_ranking_title"
                 app:layout_constraintTop_toBottomOf="@+id/tv_ranking_title" />
 
@@ -49,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/thumb_up"
+                android:src="@drawable/icon_siren"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_title"
                 app:layout_constraintStart_toEndOf="@+id/tv_ranking_title"
                 app:layout_constraintTop_toTopOf="@+id/tv_ranking_title" />
@@ -57,8 +59,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_ranking_first"
-                android:layout_width="80dp"
-                android:layout_height="112dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="49dp"
                 android:layout_marginBottom="26dp"
                 android:background="@drawable/rectangle_ranking_border_5dp"
@@ -70,22 +72,25 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_first"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="16dp"
+                    app:glideSrc="@{viewModel.topRank[0].image}"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_ranking_first_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/thumb_up" />
+                    tools:srcCompat="@drawable/icon_thumb_up" />
 
                 <TextView
                     android:id="@+id/tv_ranking_first_good_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
                     android:layout_marginBottom="12dp"
                     android:text="@{String.valueOf(viewModel.topRank[0].likeCount)}"
-                    android:textSize="6dp"
+                    android:textAppearance="@style/R8"
+                    android:textColor="@color/Black_222632"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/iv_ranking_first_good"
                     tools:text="100" />
@@ -94,9 +99,10 @@
                     android:id="@+id/tv_ranking_first_bad_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="28dp"
                     android:text="@{String.valueOf(viewModel.topRank[0].dislikeCount)}"
-                    android:textSize="6dp"
+                    android:textAppearance="@style/R8"
+                    android:textColor="@color/Black_222632"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_first_bad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/iv_ranking_first_bad"
@@ -106,42 +112,50 @@
                     android:id="@+id/iv_ranking_first_good"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="28dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_first_good_count"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tv_ranking_first_good_count"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_up" />
 
                 <ImageView
                     android:id="@+id/iv_ranking_first_bad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="2dp"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_first_good"
                     app:layout_constraintEnd_toStartOf="@+id/tv_ranking_first_bad_count"
-                    app:layout_constraintStart_toEndOf="@+id/tv_ranking_first_good_count"
                     app:layout_constraintTop_toTopOf="@+id/iv_ranking_first_good"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_down" />
 
                 <TextView
                     android:id="@+id/tv_ranking_first_description"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="88dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="36dp"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:maxLines="3"
                     android:text="@{viewModel.topRank[0].title}"
+                    android:textAppearance="@style/SB16"
+                    android:textColor="@color/Black_222632"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_first"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:text="스프레이" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_ranking_second"
-                android:layout_width="80dp"
-                android:layout_height="112dp"
-                android:layout_marginStart="36dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="12dp"
                 android:background="@drawable/rectangle_ranking_border_5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/cl_ranking_first"
                 app:layout_constraintEnd_toStartOf="@+id/cl_ranking_first"
@@ -150,65 +164,78 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_second"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="16dp"
+                    app:glideSrc="@{viewModel.topRank[1].image}"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_ranking_second_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/thumb_up" />
+                    tools:srcCompat="@drawable/icon_thumb_up" />
 
                 <TextView
                     android:id="@+id/tv_ranking_second_good_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
                     android:layout_marginBottom="12dp"
                     android:text="@{String.valueOf(viewModel.topRank[1].likeCount)}"
-                    android:textSize="6dp"
+                    android:textAppearance="@style/R8"
+                    android:textColor="@color/Black_222632"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/iv_ranking_second_good"
                     tools:text="100" />
 
                 <TextView
                     android:id="@+id/tv_ranking_second_description"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="72dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="32dp"
+                    android:ellipsize="end"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:maxLines="2"
                     android:text="@{viewModel.topRank[1].title}"
+                    android:textAppearance="@style/SB12"
+                    android:textColor="@color/Black_222632"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_second"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:text="전기" />
 
                 <ImageView
                     android:id="@+id/iv_ranking_second_good"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="28dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_second_good_count"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tv_ranking_second_good_count"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_up" />
 
                 <ImageView
                     android:id="@+id/iv_ranking_second_bad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="2dp"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_second_good"
                     app:layout_constraintEnd_toStartOf="@+id/tv_ranking_second_bad_count"
-                    app:layout_constraintStart_toEndOf="@+id/tv_ranking_second_good_count"
                     app:layout_constraintTop_toTopOf="@+id/iv_ranking_second_good"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_down" />
 
                 <TextView
                     android:id="@+id/tv_ranking_second_bad_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="28dp"
                     android:text="@{String.valueOf(viewModel.topRank[1].dislikeCount)}"
-                    android:textSize="6dp"
+                    android:textAppearance="@style/R8"
+                    android:textColor="@color/Black_222632"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_second_bad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/iv_ranking_second_bad"
@@ -217,10 +244,10 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_ranking_third"
-                android:layout_width="80dp"
-                android:layout_height="112dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="36dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/rectangle_ranking_border_5dp"
                 app:layout_constraintBottom_toBottomOf="@+id/cl_ranking_first"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -229,22 +256,24 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_third"
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginTop="16dp"
+                    app:glideSrc="@{viewModel.topRank[2].image}"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_ranking_third_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_up" />
 
                 <TextView
                     android:id="@+id/tv_ranking_third_bad_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="28dp"
                     android:text="@{String.valueOf(viewModel.topRank[2].dislikeCount)}"
-                    android:textSize="6dp"
+                    android:textAppearance="@style/R8"
+                    android:textColor="@color/Black_222632"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_third_bad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/iv_ranking_third_bad"
@@ -254,9 +283,11 @@
                     android:id="@+id/tv_ranking_third_good_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
                     android:layout_marginBottom="12dp"
                     android:text="@{String.valueOf(viewModel.topRank[2].likeCount)}"
-                    android:textSize="6dp"
+                    android:textAppearance="@style/R8"
+                    android:textColor="@color/Black_222632"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/iv_ranking_third_good"
                     tools:text="100" />
@@ -265,66 +296,84 @@
                     android:id="@+id/iv_ranking_third_bad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="2dp"
                     app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_third_good"
                     app:layout_constraintEnd_toStartOf="@+id/tv_ranking_third_bad_count"
-                    app:layout_constraintStart_toEndOf="@+id/tv_ranking_third_good_count"
                     app:layout_constraintTop_toTopOf="@+id/iv_ranking_third_good"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_down" />
 
                 <ImageView
                     android:id="@+id/iv_ranking_third_good"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="28dp"
                     app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_third_good_count"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tv_ranking_third_good_count"
-                    app:srcCompat="@drawable/thumb_up" />
+                    app:srcCompat="@drawable/icon_thumb_up" />
 
                 <TextView
                     android:id="@+id/tv_ranking_third_description"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="28dp"
+                    android:ellipsize="end"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:maxLines="2"
                     android:text="@{viewModel.topRank[2].title}"
+                    android:textAppearance="@style/SB12"
+                    android:textColor="@color/Black_222632"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_ranking_third"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:text="물" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <TextView
                 android:id="@+id/tv_ranking_first"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/oval_ranking_rank"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="-8dp"
+                android:layout_marginTop="-12dp"
+                android:background="@drawable/oval_ranking_rank_primary_10"
+                android:gravity="center"
                 android:text="@string/tv_ranking_first"
-                app:layout_constraintBottom_toTopOf="@+id/cl_ranking_first"
-                app:layout_constraintStart_toStartOf="@+id/cl_ranking_first" />
+                app:layout_constraintStart_toStartOf="@+id/cl_ranking_first"
+                app:layout_constraintTop_toTopOf="@+id/cl_ranking_first" />
 
             <TextView
                 android:id="@+id/tv_ranking_second"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/oval_ranking_rank"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="-8dp"
+                android:layout_marginTop="-12dp"
+                android:background="@drawable/oval_ranking_rank_primary_20"
+                android:gravity="center"
                 android:text="@string/tv_ranking_second"
-                app:layout_constraintBottom_toTopOf="@+id/cl_ranking_second"
-                app:layout_constraintStart_toStartOf="@+id/cl_ranking_second" />
+                app:layout_constraintStart_toStartOf="@+id/cl_ranking_second"
+                app:layout_constraintTop_toTopOf="@+id/cl_ranking_second" />
 
 
             <TextView
                 android:id="@+id/tv_ranking_third"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/oval_ranking_rank"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="-8dp"
+                android:layout_marginTop="-12dp"
+                android:background="@drawable/oval_ranking_rank_primary_30"
+                android:gravity="center"
                 android:text="@string/tv_ranking_third"
-                app:layout_constraintBottom_toTopOf="@+id/cl_ranking_third"
-                app:layout_constraintStart_toStartOf="@+id/cl_ranking_third" />
+                app:layout_constraintStart_toStartOf="@+id/cl_ranking_third"
+                app:layout_constraintTop_toTopOf="@+id/cl_ranking_third" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_ranking_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -333,6 +382,8 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/rectangle_ranking_border_11dp"
             android:text="@string/btn_ranking_home"
+            android:textAppearance="@style/SB16"
+            android:textColor="@color/White_FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

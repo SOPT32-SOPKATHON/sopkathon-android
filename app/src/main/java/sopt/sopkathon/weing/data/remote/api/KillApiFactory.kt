@@ -4,7 +4,6 @@ import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFact
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
-import sopt.sopkathon.weing.presentation.kill.KillService
 
 object KillApiFactory {
     val retrofit: Retrofit by lazy {
@@ -16,4 +15,3 @@ object KillApiFactory {
 
     inline fun <reified T> create(): T = retrofit.create<T>(T::class.java)
 }
-

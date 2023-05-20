@@ -2,15 +2,13 @@ package sopt.sopkathon.weing.data.remote.api
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
-import retrofit2.Retrofit
 import okhttp3.MediaType.Companion.toMediaType
-import sopt.sopkathon.weing.BuildConfig
+import retrofit2.Retrofit
 import sopt.sopkathon.weing.data.remote.ApiFactory
 import sopt.sopkathon.weing.data.remote.entity.RequestVoteService
 import sopt.sopkathon.weing.data.remote.entity.ResponsePreventionService
 import sopt.sopkathon.weing.data.remote.entity.ResponseScoreService
 import sopt.sopkathon.weing.presentation.kill.KillService
-
 
 object VoteApiFactory {
 
@@ -28,11 +26,10 @@ object VoteApiFactory {
 
 object ServicePool {
 
-   val voteService = VoteApiFactory.voteCreate<RequestVoteService>()
+    val voteService = VoteApiFactory.voteCreate<RequestVoteService>()
     val getKillService = VoteApiFactory.voteCreate<KillService>()
     val PreventionService = ApiFactory.create<ResponsePreventionService>()
     val ScoreService = ApiFactory.create<ResponseScoreService>()
     val rankingService = ApiFactory.create<RankingService>()
     val killService = KillApiFactory.create<KillService>()
-
 }

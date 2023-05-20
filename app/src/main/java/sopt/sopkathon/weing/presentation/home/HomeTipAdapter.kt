@@ -2,8 +2,8 @@ package sopt.sopkathon.weing.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto
@@ -33,11 +33,17 @@ class HomeTipAdapter() :
 }
 
 class HomeTipDiffCallBack : DiffUtil.ItemCallback<ResponsePreventionDto>() {
-    override fun areItemsTheSame(oldItem: ResponsePreventionDto, newItem: ResponsePreventionDto): Boolean {
-        return oldItem== newItem
+    override fun areItemsTheSame(
+        oldItem: ResponsePreventionDto,
+        newItem: ResponsePreventionDto,
+    ): Boolean {
+        return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: ResponsePreventionDto, newItem: ResponsePreventionDto): Boolean {
+    override fun areContentsTheSame(
+        oldItem: ResponsePreventionDto,
+        newItem: ResponsePreventionDto,
+    ): Boolean {
         return oldItem == newItem
     }
 }

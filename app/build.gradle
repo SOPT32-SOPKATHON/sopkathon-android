@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.plugin.serialization' version '1.8.20'
 }
 
@@ -58,6 +59,8 @@ dependencies {
 
     // glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'
+    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+
 
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -87,4 +90,6 @@ dependencies {
 
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation 'com.airbnb.android:lottie:6.0.0'
 }
