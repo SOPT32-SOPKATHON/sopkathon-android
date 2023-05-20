@@ -27,6 +27,10 @@ fun <ResponseType> Call<ResponseType>.enqueueUtil(
     })
 }
 
-fun Context.shortToastByInt(message: String) {
+fun Context.shortToastByString(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun Context.shortToastByInt(message: Int) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }
