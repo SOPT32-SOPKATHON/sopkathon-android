@@ -256,10 +256,10 @@
 
                 <ImageView
                     android:id="@+id/iv_ranking_third"
-                    app:glideSrc="@{viewModel.topRank[2].image}"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="16dp"
+                    app:glideSrc="@{viewModel.topRank[2].image}"
                     app:layout_constraintBottom_toTopOf="@+id/tv_ranking_third_description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
