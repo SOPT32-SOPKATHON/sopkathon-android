@@ -87,8 +87,8 @@
 
 | 제목                     | 내용                                                                                                                             |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| Git Convention         | <a href="https://github.com/SOPKATHON-LUCKY-SEVEN/S23H-AOS/blob/main/README/Git_Convention.md"> Git Convention </a>            |
-| Code Naming Convention | <a href="https://github.com/SOPKATHON-LUCKY-SEVEN/S23H-AOS/blob/main/README/Coding_Convention.md"> Code Naming Convention </a> |
+| Git Convention         | <a href="https://github.com/SOPT32-SOPKATHON/sopkathon-android/blob/develop/docs/Git_Convention.md"> Git Convention </a>            |
+| Code Naming Convention | <a href="https://github.com/SOPT32-SOPKATHON/sopkathon-android/blob/develop/docs/Coding_Convention.md"> Code Naming Convention </a> |
 
 <br/>
 
