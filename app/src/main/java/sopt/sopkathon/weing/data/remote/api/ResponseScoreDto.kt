@@ -10,7 +10,7 @@ data class ResponseScoreDto(
     @SerialName("data")
     val data: Data,
     @SerialName("message")
-    val message: String
+    val message: String,
 ) {
     @Serializable
     data class Data(
@@ -21,6 +21,6 @@ data class ResponseScoreDto(
         @SerialName("park_score")
         val park_score: Double,
         @SerialName("water_score")
-        val water_score: Double
+        val water_score: Double,
     )
 }

@@ -24,6 +24,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:text="@{String.valueOf(outOfRanking.rank)}"
+            android:textAppearance="@style/SB24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -31,11 +32,15 @@
 
         <TextView
             android:id="@+id/tv_ranking_item_description"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
             android:text="@{outOfRanking.title}"
+            android:textAppearance="@style/R16"
             app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_rank"
+            app:layout_constraintEnd_toStartOf="@+id/iv_ranking_item_good"
             app:layout_constraintStart_toEndOf="@+id/tv_ranking_rank"
             app:layout_constraintTop_toTopOf="@+id/tv_ranking_rank"
             tools:text="에프킬라 뿌리기" />
@@ -46,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:text="@{String.valueOf(outOfRanking.dislikeCount)}"
+            android:textAppearance="@style/R12"
             app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_item_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tv_ranking_item_description"
@@ -57,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
             android:text="@{String.valueOf(outOfRanking.likeCount)}"
+            android:textAppearance="@style/R12"
             app:layout_constraintBottom_toBottomOf="@+id/iv_ranking_item_bad"
             app:layout_constraintEnd_toStartOf="@+id/iv_ranking_item_bad"
             app:layout_constraintTop_toTopOf="@+id/iv_ranking_item_bad"
@@ -70,7 +77,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_item_good_count"
             app:layout_constraintEnd_toStartOf="@+id/tv_ranking_item_good_count"
             app:layout_constraintTop_toTopOf="@+id/tv_ranking_item_good_count"
-            app:srcCompat="@drawable/thumb_up" />
+            app:srcCompat="@drawable/icon_thumb_up" />
 
         <ImageView
             android:id="@+id/iv_ranking_item_bad"
@@ -80,7 +87,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_ranking_item_bad_count"
             app:layout_constraintEnd_toStartOf="@+id/tv_ranking_item_bad_count"
             app:layout_constraintTop_toTopOf="@+id/tv_ranking_item_bad_count"
-            app:srcCompat="@drawable/thumb_up" />
+            app:srcCompat="@drawable/icon_thumb_up" />
 
         <View
             android:id="@+id/view_ranking_item_indicator"

@@ -17,8 +17,8 @@
             layout="@layout/toolbar_skill" />
 
         <TextView
-            style="@style/SB28"
             android:id="@+id/tv_kill_main"
+            style="@style/SB28"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="31dp"

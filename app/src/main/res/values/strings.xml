@@ -11,6 +11,8 @@
     <string name="tv_ranking_first">1</string>
     <string name="tv_ranking_third">3</string>
     <string name="btn_ranking_home">홈으로 가기</string>
+    <string name="tv_ranking_title">모기 퇴치법</string>
+    <string name="tv_ranking_description">당신을 위한 추천 모기 퇴치법이에요!</string>
     <!-- 퇴치법 뷰 -->
     <string name="temp4">temp</string>
     <string name="tv_kill_title">모기 퇴치법</string>
@@ -23,6 +25,6 @@
     <string name="tv_vote_bad_comment">별로에요 ㅠ</string>
     <string name="btn_vote_to_home">홈으로</string>
     <string name="btn_vote_to_ranking">랭킹 보기</string>
-    <string name="tv_ranking_title">모기 퇴치법</string>
+
 
 </resources>

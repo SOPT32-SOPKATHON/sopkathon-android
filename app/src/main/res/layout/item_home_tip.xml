@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<!--        <variable-->
-<!--            name="data"-->
-<!--            type="sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto" />-->
+        <!--        <variable-->
+        <!--            name="data"-->
+        <!--            type="sopt.sopkathon.weing.data.remote.api.ResponsePreventionDto" />-->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,8 +17,8 @@
             android:id="@+id/iv_home_item_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:scaleType="fitXY"
             android:background="@drawable/rectangle_home_item_border_6dp"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -12,5 +12,5 @@ data class ResponsePreventionDto(
     @SerialName("image")
     val image: String,
     @SerialName("title")
-    val title: String
+    val title: String,
 )
