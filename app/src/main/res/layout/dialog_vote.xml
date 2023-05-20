@@ -68,9 +68,11 @@
         android:layout_marginHorizontal="23dp"
         android:layout_marginTop="43dp"
         android:text="@string/btn_vote_to_home"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/rectangle_vote_radius_11_none_fill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_vote_to_ranking"
         app:layout_constraintTop_toBottomOf="@id/tv_vote_good" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -78,15 +80,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="23dp"
-        android:layout_marginTop="12dp"
         android:layout_marginBottom="22dp"
         android:textColor="@color/white"
         android:background="@drawable/rectangle_vote_radius_11_fill"
         android:text="@string/btn_vote_to_ranking"
         app:layout_constraintBottom_toBottomOf ="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_vote_to_home" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 
