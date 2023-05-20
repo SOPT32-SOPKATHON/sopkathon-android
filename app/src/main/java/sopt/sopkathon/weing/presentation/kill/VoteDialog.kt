@@ -13,7 +13,6 @@ import sopt.sopkathon.weing.databinding.DialogVoteBinding
 import sopt.sopkathon.weing.presentation.home.HomeActivity
 import sopt.sopkathon.weing.presentation.ranking.RankingActivity
 
-
 class VoteDialog : DialogFragment() {
 
     private var _binding: DialogVoteBinding? = null
@@ -22,11 +21,10 @@ class VoteDialog : DialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = DialogVoteBinding.inflate(inflater, container, false)
         val view = binding.root
-
 
         dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
@@ -48,10 +46,7 @@ class VoteDialog : DialogFragment() {
             binding.ivVoteGood.setImageResource(R.drawable.img_good_click)
             binding.btnVoteToHome.isEnabled
             binding.btnVoteToRanking.isEnabled
-
-
         }
-
     }
 
     private fun clickBadIcon() {
@@ -59,33 +54,22 @@ class VoteDialog : DialogFragment() {
             binding.ivVoteBad.setImageResource(R.drawable.img_bad_click)
             binding.btnVoteToHome.isEnabled
             binding.btnVoteToRanking.isEnabled
-
         }
-
     }
-
 
     private fun clickToHomeButton() {
         binding.btnVoteToHome.setOnClickListener {
             dismiss()
             val intent = Intent(requireContext(), HomeActivity::class.java)
             startActivity(intent)
-
         }
-
     }
-
 
     private fun clickToRankinButton() {
         binding.btnVoteToRanking.setOnClickListener {
             dismiss()
             val intent = Intent(requireContext(), RankingActivity::class.java)
             startActivity(intent)
-
         }
-
     }
 }
-
-
-
