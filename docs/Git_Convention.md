@@ -1,6 +1,8 @@
 ## **Git Flow전략 사용**
 
  <img src="https://github.com/SOPT32-SOPKATHON/sopkathon-android/assets/81347125/6f18347c-5a14-4853-9fee-0bde6b5100d6" width="400">
+ 
+ 
 ## **Git Branch Convention**
 
 
