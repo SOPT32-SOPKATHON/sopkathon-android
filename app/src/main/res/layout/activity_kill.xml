@@ -48,34 +48,36 @@
             app:cardCornerRadius="11dp"
             android:elevation="9dp"
             android:background="@color/black"
-            app:layout_constraintBottom_toTopOf="@id/tv_kill_reload"
+            app:layout_constraintBottom_toTopOf="@id/btn_kill_reload"
             app:layout_constraintTop_toBottomOf="@id/tv_kill_sub"/>
 
         <TextView
-            android:id="@+id/tv_kill_reload"
+            android:id="@+id/btn_kill_reload"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="34dp"
             android:layout_marginBottom="12dp"
             android:gravity="center"
             android:paddingVertical="20dp"
-            android:background="@drawable/rectangle_skill_border_1dp"
+            android:background="@drawable/rectangle_kill_border_1dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tv_kill_success"
+            app:layout_constraintBottom_toTopOf="@id/btn_kill_success"
             android:text="@string/btn_kill_reload"
+            android:textColor="#70D2ED"
             />
 
         <TextView
-            android:id="@+id/tv_kill_success"
+            android:id="@+id/btn_kill_success"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/btn_kill_success"
+            android:textColor="@color/white"
             android:gravity="center"
             android:paddingVertical="20dp"
-            android:background="@drawable/rectangle_skill_color"
-            app:layout_constraintStart_toStartOf="@id/tv_kill_reload"
-            app:layout_constraintEnd_toEndOf="@id/tv_kill_reload"
+            android:background="@drawable/rectangle_kill_color"
+            app:layout_constraintStart_toStartOf="@id/btn_kill_reload"
+            app:layout_constraintEnd_toEndOf="@id/btn_kill_reload"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="28dp"/>
 
