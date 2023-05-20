@@ -7,7 +7,10 @@
     <!-- 홈 뷰 -->
     <string name="temp2">temp</string>
     <!-- 랭킹 뷰 -->
-    <string name="temp3">temp</string>
+    <string name="tv_ranking_second">2</string>
+    <string name="tv_ranking_first">1</string>
+    <string name="tv_ranking_third">3</string>
+    <string name="btn_ranking_home">홈으로 가기</string>
     <!-- 퇴치법 뷰 -->
     <string name="temp4">temp</string>
     <string name="tv_kill_title">모기 퇴치법</string>
@@ -15,10 +18,11 @@
     <string name="btn_kill_reload">다른 방법 보기</string>
     <string name="btn_kill_success">해결했어요</string>
     <!-- 평가 뷰 -->
-    <string name="temp5">temp</string>
-    <string name="tv_ranking_second">2</string>
-    <string name="tv_ranking_first">1</string>
-    <string name="tv_ranking_third">3</string>
-    <string name="btn_ranking_home">홈으로 가기</string>
+    <string name="tv_vote_title">방금 모기 퇴치 방법은 어떠셨나요?</string>
+    <string name="tv_vote_good_comment">너무 잘 잡혔어요!</string>
+    <string name="tv_vote_bad_comment">별로에요 ㅠ</string>
+    <string name="btn_vote_to_home">홈으로</string>
+    <string name="btn_vote_to_ranking">랭킹 보기</string>
+    <string name="tv_ranking_title">모기 퇴치법</string>
 
 </resources>
