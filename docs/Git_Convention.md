@@ -1,8 +1,8 @@
 ## **Git Flow전략 사용**
 
-![Untitled.png](..%2F..%2FDownloads%2FUntitled.png)
-
+ <img src="https://github.com/SOPT32-SOPKATHON/sopkathon-android/assets/81347125/6f18347c-5a14-4853-9fee-0bde6b5100d6" width="400">
 ## **Git Branch Convention**
+
 
 1. 작업단위/작업뷰위치_작업내용 으로 통일
 
