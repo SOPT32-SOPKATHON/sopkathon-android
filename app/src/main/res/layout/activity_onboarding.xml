@@ -10,55 +10,69 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.onboarding.OnboardingActivity">
+        tools:context=".presentation.onboarding.OnboardingActivity"
+        android:background="@color/Black_222632">
 
 
-        <TextView
-            android:id="@+id/tv_onboarding_sub_title"
+        <ImageView
+            android:id="@+id/iv_onboarding_sub_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:text="@string/tv_onboarding_sub_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textSize="18dp"/>
+            android:src="@drawable/ic_sub_logo"
+            android:layout_marginTop="76dp"/>
 
-        <TextView
-            android:id="@+id/tv_onboarding_title"
+        <ImageView
+            android:id="@+id/iv_onboarding_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/tv_onboarding_title"
+            android:layout_marginTop="4dp"
+            android:text="@string/tv_onboarding_sub_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_sub_title"
-            android:textSize="48dp"/>
+            android:src="@drawable/img_logo"
+            app:layout_constraintTop_toBottomOf="@id/iv_onboarding_sub_title"
+            />
 
 
         <TextView
             android:id="@+id/tv_onboarding_start_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="132dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rectangle_onboarding_radius_34"
             android:paddingHorizontal="12dp"
             android:paddingVertical="8dp"
             android:text="모기를 잡으면 시작됩니다"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_title" />
+            app:layout_constraintTop_toBottomOf="@id/iv_onboarding_title" />
+
+        <ImageView
+            android:id="@+id/iv_onboarding_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/img_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent "
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment" />
+
 
         <ImageView
             android:id="@+id/iv_onboarding_mosquitto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="93dp"
+            android:layout_marginTop="77dp"
             android:src="@drawable/img_mosquitto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_onboarding_start_comment" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
