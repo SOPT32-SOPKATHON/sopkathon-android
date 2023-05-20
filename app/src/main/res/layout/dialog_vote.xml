@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="@id/iv_vote_bad"
         app:layout_constraintTop_toBottomOf="@id/iv_vote_bad" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_vote_to_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_vote_good" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_vote_to_ranking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
