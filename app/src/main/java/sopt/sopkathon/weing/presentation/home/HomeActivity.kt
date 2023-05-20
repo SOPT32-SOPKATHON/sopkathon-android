@@ -1,12 +1,17 @@
 package sopt.sopkathon.weing.presentation.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import sopt.sopkathon.weing.R
 import sopt.sopkathon.weing.data.remote.api.ServicePool
 import sopt.sopkathon.weing.databinding.ActivityHomeBinding
 import sopt.sopkathon.weing.presentation.base.BindingActivity
+import sopt.sopkathon.weing.presentation.kill.KillActivity
+import sopt.sopkathon.weing.presentation.ranking.RankingActivity
 import sopt.sopkathon.weing.util.enqueueUtil
 
 class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home) {
@@ -15,6 +20,9 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
 
         initViewPager()
         initScore()
+        onClickSiren()
+        onClickMoreRanking()
+        initRankingThree()
     }
 
     private fun initViewPager() {
@@ -138,5 +146,32 @@ class HomeActivity : BindingActivity<ActivityHomeBinding>(R.layout.activity_home
         } else{
             return 4
         }
+    }
+
+    private fun onClickSiren(){
+        binding.ivHomeSiren.setOnClickListener{
+            startActivity(Intent(this, KillActivity::class.java))
+        }
+    }
+
+    private fun onClickMoreRanking(){
+        binding.tvHomeMoreRankingText.setOnClickListener {
+            startActivity(Intent(this, RankingActivity::class.java))
+        }
+    }
+
+    private fun initRankingThree() {
+        lifecycleScope.launch {
+            kotlin.runCatching {
+                ServicePool.rankingService.getRanking()
+            }.onSuccess {
+                binding.tvHomeRanking1Title.text = it.data[0].title
+                binding.tvHomeRanking2Title.text = it.data[1].title
+                binding.tvHomeRanking3Title.text = it.data[2].title
+            }.onFailure {
+
+            }
+        }
+
     }
 }
